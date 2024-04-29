@@ -301,8 +301,9 @@ type EditorPanelProps = { children }
 
 const EditorPanel: React.FC<EditorPanelProps> = ({ children }) => {
   const { config, data, isDashboard, loading, setParentConfig, updateConfig } = useContext(ConfigContext)
-  const { contentEditor, runtime, theme, visual, newViz } = config
-  const { inlineHTML, showHeader, srcUrl, title, useInlineHTML } = contentEditor
+  const { contentEditor, runtime, theme, newViz } = config
+  const visual = config.visual || {}
+  const { inlineHTML, showHeader, srcUrl, title, useInlineHTML } = contentEditor || {}
   const [displayPanel, setDisplayPanel] = useState(true)
   const updateField = updateFieldFactory(config, updateConfig, true)
 
