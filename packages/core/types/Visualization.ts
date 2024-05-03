@@ -22,6 +22,7 @@ export type Visualization = ConfigureData & {
   hide: any[]
   legend: Legend
   markupInclude: MarkupInclude
+  multiDashboards?: any[]
   newViz: boolean
   openModal: boolean
   orientation: 'vertical' | 'horizontal'
